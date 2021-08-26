@@ -62,7 +62,7 @@ class Popup extends Component {
 		}
 	}
 
-	hidePopup() {
+	hidePopup = ()=> {
 		Animated.sequence([
 			Animated.timing(this.state.positionPopup, {
 				toValue: HEIGHT,
@@ -114,6 +114,7 @@ class Popup extends Component {
 		return (
 			<Animated.View
 				ref={c => this._root = c}
+	 			onTouchEnd={this.hidePopup}
 				style={[styles.Container, {
 					backgroundColor: background || 'transparent',
 					opacity: this.state.opacity,
