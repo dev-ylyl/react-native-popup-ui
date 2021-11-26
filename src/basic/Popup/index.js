@@ -33,7 +33,8 @@ class Popup extends Component {
 			callback: config.callback !== undefined ? config.callback : this.defaultCallback(),
 			background: config.background || 'rgba(0, 0, 0, 0.5)',
 			timing: config.timing,
-			autoClose: config.autoClose !== undefined ? config.autoClose : false
+			autoClose: config.autoClose !== undefined ? config.autoClose : false,
+			backgroundPressDisable : config.backgroundPressDisable
 		})
 
 		Animated.sequence([
@@ -114,7 +115,7 @@ class Popup extends Component {
 		return (
 			<Animated.View
 				ref={c => this._root = c}
-	 			onTouchEnd={this.hidePopup}
+	 			onTouchEnd={this.state.backgroundPressDisable ? ()=>{} : this.hidePopup}
 				style={[styles.Container, {
 					backgroundColor: background || 'transparent',
 					opacity: this.state.opacity,
