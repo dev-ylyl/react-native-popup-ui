@@ -98,6 +98,7 @@ class Popup extends Component {
 			case 'Success': return require('../../assets/Success.png')
 			case 'Danger': return require('../../assets/Error.png')
 			case 'Warning': return require('../../assets/Warning.png')
+			case 'Gift' : return require('../../assets/Gift.png')
 		}
 	}
 
@@ -239,6 +240,17 @@ const styles = StyleSheet.create({
 	Warning: {
 		backgroundColor: '#fbd10d',
 		shadowColor: "#fbd10d",
+		shadowOffset: {
+			width: 0,
+			height: 5,
+		},
+		shadowOpacity: 0.36,
+		shadowRadius: 6.68,
+		elevation: 11
+	},
+	Gift:{
+		backgroundColor: '#5970e3',
+		shadowColor: "#5970e3",
 		shadowOffset: {
 			width: 0,
 			height: 5,
